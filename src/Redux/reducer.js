@@ -1,3 +1,5 @@
+import { ADD_TO_CART } from "./constant"
+
 // Reducer and action ek se jaayeda bhi ho sakete hai but unhe combine karne ke liye
 // humein ek root reducer banana padta hai
 
@@ -31,7 +33,22 @@ export const cartData = (data = [], action) => {
 
 console.warn('Reducer Called !!', action)
 
+// Actions me return ka type daalna must hai redux me kyonki ye type hi hai 
+// help karta hai ye confirm karne me ki kounsa reducer connect hoga kounse action ke saath 
+
+// ye if comparision type ko add to cart se match karne ke liye hi hota hai 
+
+if(action.type === 'ADD_TO_CART'){
+
+console.warn('Reducer Called !!', action)
+
+}
+
+else
+{
 return 'ABC'
+
+}
 
 }
 

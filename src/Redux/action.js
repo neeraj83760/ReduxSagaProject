@@ -28,13 +28,13 @@
 export const addToCart = (data) =>{
 
     console.warn('Action Called!!', data)
-    // Actions me return ka type daalna must hai redux me 
+    // Actions me return ka type daalna must hai redux me kyonki ye type hi hai 
+    // help karta hai ye confirm karne me ki kounsa reducer connect hoga kounse action ke saath 
     return{
     type:'ADD_TO_CART',
     data: '1 item'
     }
 }
-
 
 
 
