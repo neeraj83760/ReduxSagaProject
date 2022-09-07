@@ -1,4 +1,5 @@
 import { ADD_TO_CART } from "./constant"
+import { REMOVE_TO_CART } from "./constant"
 
 // Reducer and action ek se jaayeda bhi ho sakete hai but unhe combine karne ke liye
 // humein ek root reducer banana padta hai
@@ -27,30 +28,48 @@ Key Points Reducer :
 // Important keypoint :  Reducer tab tak call nahi hoga jab tak hum usse action se connect na kar de
 // Isilye humne reducer ko export bhi kiya hai  
 
-export const cartData = (data = [], action) => {
+// export const cartData = (data = [], action) => {
 
 // Page refresh hone pe cart ka data remove ho jaata hai ....
 
-console.warn('Reducer Called !!', action)
+// console.warn('Reducer Called !!', action)
 
 // Actions me return ka type daalna must hai redux me kyonki ye type hi hai 
 // help karta hai ye confirm karne me ki kounsa reducer connect hoga kounse action ke saath 
 
 // ye if comparision type ko add to cart se match karne ke liye hi hota hai 
 
-if(action.type === 'ADD_TO_CART'){
+// if(action.type === 'ADD_TO_CART'){
 
-console.warn('Reducer Called !!', action)
+// console.warn('Reducer Called !!', action)
+
+// }
+
+// else
+// {
+// return 'ABC'
+
+// }
+
+// }
+
+// VVIMP : why we need switch statement in Reducer function  ? 
+// 2 : Make a SwitchStatement
+// 3 : Check Some with Switch Statement
+
+
+export const cartData = (data = [], action) => {
+
+    switch (action.type) {
+        case ADD_TO_CART:
+        console.warn('ADD_TO_CART condition', action);       
+        return 1+1;
+        case REMOVE_TO_CART:
+        console.warn('REMOVE_TO_CART condition', action);       
+        return 1-1;
+        default:
+        return 'no action called'     
+    }
+ 
 
 }
-
-else
-{
-return 'ABC'
-
-}
-
-}
-
-
-

@@ -3,5 +3,5 @@
 // to hume ek hi jagah par string modify karenge aur har jagah string modify hoga     
 
 export const  ADD_TO_CART = 'ADD_TO_CART';
-
+export const  REMOVE_TO_CART = 'REMOVE_TO_CART';
 

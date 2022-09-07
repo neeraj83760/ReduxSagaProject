@@ -1,3 +1,5 @@
+import { ADD_TO_CART, REMOVE_TO_CART } from "./constant"
+
 //  Actions : plain functions hote hai jaise hum javascript ke functions
 // banate hai na waise hi ... In function ko call hum tab karte hai jab humien 
 // reactjs se redux ke andar data 
@@ -30,13 +32,17 @@ export const addToCart = (data) =>{
     console.warn('Action Called!!', data)
     // Actions me return ka type daalna must hai redux me kyonki ye type hi hai 
     // help karta hai ye confirm karne me ki kounsa reducer connect hoga kounse action ke saath 
-    return{
-    type:'ADD_TO_CART',
-    data: '1 item'
-    }
+    // return{
+    // type:'ADD_TO_CART',
+    // data: '1 item'
+    // }
+
+     return{
+
+        type:REMOVE_TO_CART,
+
+     }
 }
-
-
 
 
 
