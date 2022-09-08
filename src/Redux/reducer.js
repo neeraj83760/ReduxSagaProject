@@ -63,12 +63,18 @@ export const cartData = (data = [], action) => {
     switch (action.type) {
         case ADD_TO_CART:
         console.warn('ADD_TO_CART condition', action);       
-        return 1+1;
-        case REMOVE_TO_CART:
-        console.warn('REMOVE_TO_CART condition', action);       
-        return 1-1;
+        // return 1+1;
+        //action.data current value deta hai cart ki ..but '...data' iska matlab
+        //previous jo bhi data the cart wo bhi carry karta hai value 
+        // data ek array hai aur jab bhi hum usse new array me send karenege to destruct karenge       
+        return [action.data, ...data ]
+        // case REMOVE_TO_CART:
+        // console.warn('REMOVE_TO_CART condition', action);       
+        // return 1-1;
         default:
-        return 'no action called'     
+        // return 'no action called'
+        // return data ka matlab cart me koi bhi Item nahi hai  
+        return data;    
     }
  
 

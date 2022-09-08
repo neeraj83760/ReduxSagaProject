@@ -39,7 +39,7 @@ export const addToCart = (data) =>{
 
      return{
 
-        type:REMOVE_TO_CART,
+        type:ADD_TO_CART,
 
      }
 }
