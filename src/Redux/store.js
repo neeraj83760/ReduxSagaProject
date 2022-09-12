@@ -4,7 +4,11 @@
 
 import {configureStore} from '@reduxjs/toolkit'
 
-import rootReducer from './rootReducer' 
+import rootReducer from './rootReducer'
+
+import productSaga from './productSaga'
+
+import createSagaMiddleware from 'redux-saga'
 
 //  Store ke andar saari application ka data hota hai
 
@@ -20,8 +24,21 @@ import rootReducer from './rootReducer'
 //     return 100; 
 // }
 
-// const store = createStore(rootReducer); 
+// const store = createStore(rootReducer);
 
-const store  = configureStore({reducer: rootReducer});
+const sagaMiddleware = createSagaMiddleware();
 
-export default store; 
+const store  = configureStore(
+    {
+        reducer: rootReducer,
+        // middleware saga me as a callback function hi register hota hai 
+        middleware:() =>[sagaMiddleware]
+    }
+    
+    );
+
+    sagaMiddleware.run(store);
+
+export default store;
+
+
