@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_TO_CART } from "./constant"
+import { ADD_TO_CART, REMOVE_FROM_CART, EMPTY_CART } from "./constant"
 
 //  Actions : plain functions hote hai jaise hum javascript ke functions
 // banate hai na waise hi ... In function ko call hum tab karte hai jab humien 
@@ -40,7 +40,28 @@ export const addToCart = (data) =>{
      return{
 
         type:ADD_TO_CART,
+        data
+     }
+}
 
+export const removeFromCart = (data) =>{
+
+    console.warn(' removeFromCart Action Called!!', data)
+
+     return{
+
+        type:REMOVE_FROM_CART,
+        data
+     }
+}
+// no need of data if you want to empty the cart 
+export const emptyCart = () =>{
+
+    console.warn('emptyCart Action Called!!')
+
+     return{
+
+        type:EMPTY_CART,
      }
 }
 

@@ -1,5 +1,5 @@
-import { ADD_TO_CART } from "./constant"
-import { REMOVE_TO_CART } from "./constant"
+import { ADD_TO_CART, REMOVE_FROM_CART, EMPTY_CART } from "./constant"
+// import { REMOVE_FROM_CART } from "./constant"
 
 // Reducer and action ek se jaayeda bhi ho sakete hai but unhe combine karne ke liye
 // humein ek root reducer banana padta hai
@@ -68,10 +68,17 @@ export const cartData = (data = [], action) => {
         //previous jo bhi data the cart wo bhi carry karta hai value 
         // data ek array hai aur jab bhi hum usse new array me send karenege to destruct karenge       
         return [action.data, ...data ]
-        // case REMOVE_TO_CART:
-        // console.warn('REMOVE_TO_CART condition', action);       
-        // return 1-1;
-        default:
+        case REMOVE_FROM_CART:
+        console.warn('REMOVE_TO_CART condition', action);
+        data.length = data.length - 1;
+        // Remove karte time data add to hoga nahi array se no need to write 'action.data' in the return value statment         
+        return [ ...data ];
+        case EMPTY_CART:
+            console.warn('EMPTY_CART condition', action);
+            data = [];
+            // Remove karte time data add to hoga nahi array se no need to write 'action.data' in the return value statment         
+            return [ ...data ];
+        default: 
         // return 'no action called'
         // return data ka matlab cart me koi bhi Item nahi hai  
         return data;    

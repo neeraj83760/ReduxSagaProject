@@ -4,12 +4,15 @@
 
 import {combineReducers} from 'redux'
 import {cartData} from './reducer'
+import {productData} from './productReducer' 
 
 export default combineReducers({
     // as per adv javascript jab bhi hum object banate hai to key and value same
     // to hum name:name aise nahi likhte we can simply write name 
     // same is happening in case of cartData 
-    cartData 
+    cartData,
+    productData 
+    
 })
 
 

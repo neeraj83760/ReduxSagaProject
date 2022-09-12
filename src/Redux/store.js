@@ -1,4 +1,9 @@
-import {createStore} from 'redux'
+// import {createStore} from 'redux'
+
+// Keypoint : configureStore is a replacement of createStore in the redux toolkit 
+
+import {configureStore} from '@reduxjs/toolkit'
+
 import rootReducer from './rootReducer' 
 
 //  Store ke andar saari application ka data hota hai
@@ -15,6 +20,8 @@ import rootReducer from './rootReducer'
 //     return 100; 
 // }
 
-const store = createStore(rootReducer); 
+// const store = createStore(rootReducer); 
+
+const store  = configureStore({reducer: rootReducer});
 
 export default store; 
