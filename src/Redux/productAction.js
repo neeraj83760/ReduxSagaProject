@@ -1,4 +1,4 @@
-import { PRODUCT_LIST, SET_PRODUCT_LIST } from "./constant"
+import { PRODUCT_LIST} from "./constant"
 
 // API call is always an async operation isliye hum function ko async bana dete hai 
 export const productList = () =>{
