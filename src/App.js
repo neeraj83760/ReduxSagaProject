@@ -1,7 +1,8 @@
 import './App.css';
 import Header from './Components/Header';
 import Main from './Components/Main';
-
+import {Route,Routes} from 'react-router-dom'
+import Cart from './Components/Cart';
 
 // How to call Actions : Ye useDispatch hook ki help se jo react-redux me hota hai
 // action ka kaam react se data leke reducer ko call karna 
@@ -13,7 +14,11 @@ function App() {
   return (
     <div className="m-5 ">
     <Header />
-    <Main   />   
+    <Routes>
+      <Route path='/'element={<Main /> }/>
+      <Route path='/cart'element={<Cart /> }/>  
+    </Routes>
+     
     </div>
   );
 }
