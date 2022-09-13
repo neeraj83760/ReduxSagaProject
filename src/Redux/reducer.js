@@ -70,9 +70,11 @@ export const cartData = (data = [], action) => {
         return [action.data, ...data ]
         case REMOVE_FROM_CART:
         console.warn('REMOVE_TO_CART condition', action);
-        data.length = data.length - 1;
+        // data.length = data.length - 1;
         // Remove karte time data add to hoga nahi array se no need to write 'action.data' in the return value statment         
-        return [ ...data ];
+        const remainingItem = data.filter((item)=> item.id!== action.data) // action.data ke andar humari
+        // ID aa rahi hai
+        return [ ...remainingItem ];
         case EMPTY_CART:
             console.warn('EMPTY_CART condition', action);
             data = [];
