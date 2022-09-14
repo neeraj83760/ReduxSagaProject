@@ -1,4 +1,5 @@
 import { PRODUCT_LIST} from "./constant"
+import { SEARCH_PRODUCT } from "./constant"
 
 // API call is always an async operation isliye hum function ko async bana dete hai 
 export const productList = () =>{
@@ -16,6 +17,15 @@ export const productList = () =>{
       // ki mujhe kounsa function call karna hai 
         type:PRODUCT_LIST,
            }
+}
+
+export const productSearch = (query) =>{
+
+    return{
+   
+       type:SEARCH_PRODUCT,
+       query,
+          }
 }
 
 
