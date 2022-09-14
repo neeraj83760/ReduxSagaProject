@@ -1,4 +1,5 @@
 import mg from "../Images/cart.png"
+import mg1 from "../Images/kart.png"
 import {useSelector, useDispatch} from 'react-redux'
 import { Link } from "react-router-dom"
 import {productSearch} from '../Redux/productAction'
@@ -11,7 +12,7 @@ const Header = () => {
     console.warn('Redux data in Header',result)
     return (
     <div className="header">
-        <Link to="/"> <h1 style={{float: 'left', margin: '10px', padding:'10px', color: 'white'}}>E-Commerce</h1></Link>
+        <Link to="/"><img className="imageKart" src={mg1} alt="" /> </Link>
        
 
           

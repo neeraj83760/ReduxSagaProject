@@ -45,7 +45,7 @@
 width:500px;
 height: 40px;
 margin-top: 35px;
-margin-right: 200px;
+margin-right: 20px;
 border-radius: 10px;
 border-style: none;
 padding: 15px;
@@ -55,9 +55,19 @@ padding: 15px;
 .cart-div{
 
 float: right;
-margin: 25px;
+margin: 40px;
 position: relative;
 
+}
+
+.imageKart {
+
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background:none;
+  object-fit: cover;
+  padding-left: 25px;
 }
 
 .cart-div img{
