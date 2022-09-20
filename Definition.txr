@@ -1,0 +1,75 @@
+Saga : Iska use Async operations ko handle karne ke liya hota hai, API waale data ko 
+handle karne ke liye
+
+Kai baar aisa hota hai ki humne request kardi APi call karne ke liye data ki but we know
+javascript wait karta nahi hai response ka ..to redux bhi wait nahi karega response ka
+so ho sakta hai data humara time pe available na ho ...... Isliye hum saga use karte hai 
+taaki wo asyncronus operations me hum SAGA use karte hai
+
+Thunk bhi use kar sakete hai but aajkal saga jayeda use ho raha
+
+Saga bahut accha structure bhi de deta hai API call karne ke liye 
+
+
+Redux : It's a library for State(Data) Managment tool hai 
+Best example : Agar shopping cart se Item ki quantity ko reduce ya Increase
+koroge to price bhi upata hona chahiye 
+To hum Is case me data ko centralize store me rakh sakete hai to jo bhi component 
+me change hoga wo dusre component ko pata chal jaayega aur wo component updated 
+data us centralize store se le lega 
+
+Redux also do Predcitable state management :  Agar shopping cart se Item ki quantity reduce ya Increase
+koroge to price component bhi update hona chahiye yaani Price component jo checkout 
+page pe hota hai wo pridict kar leta hai ki kahi update hua hai 
+
+
+Redux Architecture :
+
+    ->-Action => Reducer => Store --  
+    |                              |
+    |                              |
+    --------<------ View ------<----      
+
+
+View : Iska matlab humari web application
+
+Maanlo aapki web app me 4 components hai I mean inside View aur appko component A se data
+send karna hai data B me to pehle aapko action call karni padegi ..action calling is easy
+we need to create a file we called it action file hum action ke liye function banate hai
+Action reducer me jaayega aur reducer us data ko store kar deta store ke andar 
+
+Store se data kahi bhi ja sakta hai 
+
+: Example : Redux aapki poori web applcation ke upar wrapper bana deta hai wo wrapper
+poori ki poori web application ko control me le lega .... ab jo bhi component hai 
+web app me wo action call karega ... fir action reducer ko call karega ..aur reducer
+action banayega jo ki baaki kisi bhi components me accessible hoga 
+
+
+What is the need of SAGA in Redux : maanlo aapne kisi component se action call kiya 
+aur appko ek API call karnji hai ...aur maan lo API ne 30 seconds laga diya server se 
+load hone me but tab tak response reducer se hote hue aage ja chuka tha.... uss case
+me hum kya karenge ? Ye async data hota hai ... pehle hum is senario me Promise and
+Async await use kiya karte the  ..... but structure humare pass bahut bada hai 
+to Promise and Async await lagane me bahut time lag jaayega to Isliye hum use karte hai 
+Saga 
+
+Saga is a Middleware iski ek file banti hai alag se use andar hum jo bhi apni API call 
+karna chahe wo call kar sakete hai aur wahi data hum redux ke andar store karwa dete hai
+
+Saga async operations 
+ |        | 
+ |        |
+ ->-Action=> Reducer => Store --  
+ |                             |
+ |                             |
+ --------<------ View ------<----   
+
+
+
+
+
+
+
+
+
